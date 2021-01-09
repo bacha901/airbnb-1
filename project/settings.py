@@ -44,6 +44,8 @@ INSTALLED_APPS = [
     'property',
     'about',
     'settings',
+    "taggit",
+
 
 ]
 
