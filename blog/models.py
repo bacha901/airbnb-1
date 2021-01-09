@@ -16,3 +16,20 @@ class Post(models.Model):
     description  = models.TextField(max_length=15000)
     category = models.ForeignKey('Category', related_name='post_category', on_delete=models.CASCADE)
     slug = models.SlugField(null=True , blank=True)
+
+    
+
+    def save(self, *args, **kwargs):
+       if not self.slug:
+           self.slug = slugify(self.title)    
+       super(Post, self).save(*args, **kwargs) # Call the real save() method
+
+    def __str__(self):
+        return self.name
+
+
+class Category(models.Model):
+    name = models.CharField(max_length=50)
+
+    def __str__(self):
+        return self.name
