@@ -1,10 +1,9 @@
-  
 from django.db import models
-
 from django.utils import timezone
 from django.contrib.auth.models import User
 from taggit.managers import TaggableManager
 from django.utils.text import slugify
+from django.urls import reverse
 
 # Create your models here.
 class Post(models.Model):
@@ -17,7 +16,7 @@ class Post(models.Model):
     category = models.ForeignKey('Category', related_name='post_category', on_delete=models.CASCADE)
     slug = models.SlugField(null=True , blank=True)
 
-    
+
 
     def save(self, *args, **kwargs):
        if not self.slug:
@@ -25,7 +24,11 @@ class Post(models.Model):
        super(Post, self).save(*args, **kwargs) # Call the real save() method
 
     def __str__(self):
-        return self.name
+        return self.title
+
+    def get_absolute_url(self):
+        return reverse("blog:post_detail", kwargs={"slug": self.slug})
+    
 
 
 class Category(models.Model):
@@ -33,3 +36,4 @@ class Category(models.Model):
 
     def __str__(self):
         return self.name
+      
