@@ -1,7 +1,6 @@
 from django import forms
 
 
-from .models import PropertyBook
 
 from .models import PropertyBook
 
