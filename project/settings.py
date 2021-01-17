@@ -44,8 +44,10 @@ INSTALLED_APPS = [
     'property',
     'about',
     'settings',
-    "taggit",
-     'django_filters',
+    'taggit',
+    'django_filters',
+    'bootstrap4',
+
 
 
 ]
