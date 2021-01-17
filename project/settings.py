@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'about',
     'settings',
     "taggit",
+     'django_filters',
 
 
 ]
