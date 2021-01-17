@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'taggit',
     'django_filters',
     'bootstrap4',
+    'django_summernote',
 
 
 
