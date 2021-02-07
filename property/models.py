@@ -40,6 +40,7 @@ class PropertyImages(models.Model):
         return str(self.property)
 
 
+
 class Place(models.Model):
     name = models.CharField(max_length=50)
     image = models.ImageField(upload_to='places/')
