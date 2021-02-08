@@ -38,6 +38,7 @@ class PropertyDetail(FormMixin , DetailView):
             myform.save()
 
             return redirect('/')
-
         else:
             print('not valid')
+
+
