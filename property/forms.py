@@ -1,9 +1,7 @@
 from django import forms
 
 
-
 from .models import PropertyBook
-
 
 
 class PropertyBookForm(forms.ModelForm):
